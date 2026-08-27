@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mari's Apartment Redesign | Moodboard & Comps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root[data-theme="dark"] {
+      --bg: #0c0f17;
+      --card-bg: #161b26;
+      --card-nested: #1c2333;
+      --border: #262f40;
+      --text: #f3f4f6;
+      --text-muted: #94a3b8;
+      --accent: #e07a5f;
+      --accent-hover: #f28e74;
+      --nav-bg: rgba(12, 15, 23, 0.85);
+      --badge-budget-bg: rgba(245, 158, 11, 0.15);
+      --badge-budget-txt: #f59e0b;
+      --badge-article-bg: rgba(59, 130, 246, 0.15);
+      --badge-article-txt: #60a5fa;
+    }
+
+    :root[data-theme="light"] {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-nested: #f1f5f9;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --accent: #c85a3d;
+      --accent-hover: #a84328;
+      --nav-bg: rgba(248, 250, 252, 0.88);
+      --badge-budget-bg: #fef3c7;
+      --badge-budget-txt: #b45309;
+      --badge-article-bg: #dbeafe;
+      --badge-article-txt: #1d4ed8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .hero-img {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 4px 15px rgba(224, 122, 95, 0.35);
+      flex-shrink: 0;
+    }
+
+    .hero-text h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-text p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 650px;
+    }
+
+    .theme-toggle-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--card-nested);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .board-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--card-nested);
+      border: 1px solid var(--border);
+    }
+
+    .btn-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .nav-filters {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      padding: 0.6rem 0.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .nav-filters a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .nav-filters a:hover {
+      color: var(--text);
+      background: var(--card-nested);
+    }
+
+    .room-section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 5.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.6rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .comparison-row {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .row-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .vs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .vs-grid.three-col {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .side-card {
+      background: var(--card-nested);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .side-thumb {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      background: #202738;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-body {
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .badge.budget { background: var(--badge-budget-bg); color: var(--badge-budget-txt); }
+    .badge.article { background: var(--badge-article-bg); color: var(--badge-article-txt); }
+
+    .price-tag {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .side-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .side-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    .card-btn {
+      display: block;
+      text-align: center;
+      padding: 0.5rem 0.8rem;
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .card-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .vs-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .theme-toggle-btn {
+        position: static;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero-card">
+      <img src="images/IMG_1708-2.jpg" alt="Mari" class="hero-img" />
+      <div class="hero-text">
+        <h1>Mari's Apartment Redesign</h1>
+        <p>A side-by-side visual breakdown comparing direct starter picks against curated investment alternatives. Made with love for a lovely lady.</p>
+        <div class="board-links">
+          <a href="https://www.wayfair.com/boards/34cdf63f-f047-48e3-9a37-f918e8338bc8/verify/34cdf63f-f047-48e3-9a37-f918e8338bc8.3d9d05d4-b103-422d-a245-2b19acc1fc68" target="_blank" class="btn-pill">Wayfair Board ↗</a>
+          <a href="https://www.amazon.com/hz/wishlist/ls/2DNHYYG75EGDV/ref=nav_wishlist_lists_2" target="_blank" class="btn-pill">Amazon Wishlist ↗</a>
+        </div>
+      </div>
+      <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
+    </header>
+
+    <nav class="nav-filters">
+      <a href="#kitchen">Kitchen Island</a>
+      <a href="#workspace">Work Space</a>
+      <a href="#living-couches">Couches & Sofas</a>
+      <a href="#living-chairs">Accent Chairs & Lounges</a>
+      <a href="#living-rugs-pillows">Rugs & Floor Seating</a>
+      <a href="#tables">Coffee & Side Tables</a>
+      <a href="#shelving-media">TV Stands & Shelving</a>
+      <a href="#decor">Wall Panels & Art</a>
+    </nav>
+
+    <!-- 1. KITCHEN -->
+    <section id="kitchen" class="room-section">
+      <div class="section-header">
+        <h2>Kitchen & Dining Island</h2>
+        <p>Stool options and comfort cushioning for the kitchen island counter.</p>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Counter / Bar Stools</div>
+        <div class="vs-grid">
+          <div class="side-card">
+            <img src="images/stolls-24-furmax-amazon.png" alt="Furmax Stools" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Budget Pick • Amazon</span><span class="price-tag">~$90 - $110 (Set)</span></div>
+              <h4>Furmax 24" / 30" Metal Stools</h4>
+              <p>Stackable industrial backless stools with solid wooden top seat.</p>
+              <a href="https://www.amazon.com/dp/B07N667M1B/?coliid=I1QWWCP0VJPXXO&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+          <div class="side-card">
+            <img src="https://images.unsplash.com/photo-1541558869434-2840d308329a?auto=format&fit=crop&w=600&q=80" alt="Article Svelti" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge article">Investment Pick • Article</span><span class="price-tag">$109 / each</span></div>
+              <h4>Article Svelti Bar Stool</h4>
+              <p>Minimalist matte molded bucket seat with slender powder-coated legs.</p>
+              <a href="https://www.article.com/browse/47/chairs-stools" target="_blank" class="card-btn">View on Article ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Stool Cushioning & Comfort</div>
+        <div class="vs-grid">
+          <div class="side-card">
+            <img src="images/stool-magnetic-cushion-amazon.png" alt="Magnetic Cushion" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Budget Pick • Amazon</span><span class="price-tag">~$25 - $35</span></div>
+              <h4>Stool Magnetic Cushion</h4>
+              <p>Non-slip magnetic seat cushions adding immediate comfort to steel tops.</p>
+              <a href="https://www.amazon.com/dp/B0854PN9SL/?coliid=I23V0DVP15ETH3&colid=2DNHYYG75EGDV&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+          <div class="side-card">
+            <img src="https://images.unsplash.com/photo-1506898667547-42e22a46e125?auto=format&fit=crop&w=600&q=80" alt="Sede Stool" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge article">Investment Pick • Article</span><span class="price-tag">$249</span></div>
+              <h4>Article Sede Counter Stool</h4>
+              <p>Built-in high-density padded leather seat on solid walnut wood legs.</p>
+              <a href="https://www.article.com/browse/47/chairs-stools" target="_blank" class="card-btn">View on Article ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. WORKSPACE -->
+    <section id="workspace" class="room-section">
+      <div class="section-header">
+        <h2>Work Space</h2>
+        <p>Modular ladder desks tailored for compact work-from-home footprints.</p>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Modular Ladder Desk Styles</div>
+        <div class="vs-grid three-col">
+          <div class="side-card">
+            <img src="images/laddar-desk-simple-wayfair.png" alt="Simple Ladder Desk" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$120 - $160</span></div>
+              <h4>Simple Lean Ladder Desk</h4>
+              <p>Minimalist, low-profile leaning desk workspace with upper storage tier.</p>
+              <a href="https://www.wayfair.com/shop-product-type/pdp/17-stories-andrea-leaningladder-desk-w006110681.html?piid=914388555" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+          <div class="side-card">
+            <img src="images/desk-laddar-full-wayfair.png" alt="Full Ladder Desk" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$180 - $230</span></div>
+              <h4>Full Ladder Desk Workspace</h4>
+              <p>Multi-tier modular workspace offering plenty of shelving for books and monitors.</p>
+              <a href="https://www.wayfair.com/shop-product-type/pdp/17-stories-cessnock-leaningladder-desk-stms2258.html" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+          <div class="side-card">
+            <img src="images/shelf-ladder-amazon.png" alt="Albemarie Ladder Desk" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$140 - $190</span></div>
+              <h4>Albemarie Ladder Desk Small</h4>
+              <p>Leaning ladder workspace desk with upper storage and display shelving[span_2](start_span)[span_2](end_span).</p>
+              <a href="https://www.amazon.com/dp/B0GVM4PRW6/?coliid=I1HNUQGCEZ6XE&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. LIVING - COUCHES -->
+    <section id="living-couches" class="room-section">
+      <div class="section-header">
+        <h2>Couches & Sofas</h2>
+        <p>Main seating options across tailored fabrics, faux leather, and sofa beds.</p>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Sofa Selections (65" - 89" & Sofa Beds)</div>
+        <div class="vs-grid three-col">
+          <div class="side-card">
+            <img src="images/couch-65-upholstered-wayfair.png" alt="Carmencita 65” Loveseat" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$420 - $550</span></div>
+              <h4>Carmencita 65” Linen Upholstered</h4>
+              <p>Compact apartment-sized loveseat with comfortable tailored cushions.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/wade-logan-carmencita-65-linen-upholstered-square-arm-loveseat-w008221555.html?piid=966046579%2C995237776" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/couch-85-faux-wayfair.png" alt="Caynemore 85” Faux Leather Sofa" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$580 - $720</span></div>
+              <h4>Caynemore 85” Faux Leather Sofa</h4>
+              <p>Mid-century warm caramel faux leather with deep seating and clean lines.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/latitude-run-caynemore-85-w-faux-leather-square-arm-sofa-w100694092.html?piid=1113118758" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/couch-87-italian.png" alt="Mid Century 87” Italian" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$750 - $950</span></div>
+              <h4>Mid Century 87” Italian</h4>
+              <p>Streamlined modern European profile with premium soft-touch Italian leather upholstery.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/george-oliver-carlyle-eichhorn-87-mid-century-modern-luxury-italian-leather-couch-w010253378.html?piid=1756203536" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/couch-89-upholstered-wayfair.png" alt="Brooklington 89'' Upholstered Sofa" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$690 - $880</span></div>
+              <h4>Brooklington 89'' Upholstered Sofa</h4>
+              <p>Generously sized 3-seater sofa for open lounge layouts.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/ebern-designs-brooklington-89-upholstered-sofa-w110562316.html?piid=906178338" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/nola-sofa-bed-amazon.png" alt="Nola Sofa Bed" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$350 - $480</span></div>
+              <h4>Nola Modern Sofa Bed</h4>
+              <p>Convertible sleeper sofa ideal for overnight guests and compact rooms.</p>
+              <a href="https://www.amazon.com/dp/B0857LNN4G/?coliid=IA1ZCGG1CA68D&colid=2DNHYYG75EGDV&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/futon-novogratz-82.png" alt="Novogratz Brittany Futon" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$280 - $380</span></div>
+              <h4>Novogratz Brittany Futon Sofa</h4>
+              <p>Ribbed tufted futon couch with rounded arm profile and convertible fold-down back.</p>
+              <a href="https://www.amazon.com/dp/B08G3BP7VL/?coliid=I413DNDLSUVBB&colid=2DNHYYG75EGDV&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LIVING - CHAIRS -->
+    <section id="living-chairs" class="room-section">
+      <div class="section-header">
+        <h2>Accent Chairs & Lounges</h2>
+        <p>Mid-century armchairs, faux leather accents, and complete lounge sets.</p>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Accent Seating</div>
+        <div class="vs-grid three-col">
+          <div class="side-card">
+            <img src="images/chair-mid-century-amazon.png" alt="Belleze Lounge Chair" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$170 - $220</span></div>
+              <h4>Belleze Mid Century Lounge Chair</h4>
+              <p>Clean solid wood arm profile with textured tailored fabric seating.</p>
+              <a href="https://www.amazon.com/dp/B07W1XX1C5/?coliid=I1S14IA2EH9VN9&colid=2DNHYYG75EGDV&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/chair-accent-faux-wayfair.png" alt="Faux accent armchair" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$190 - $260</span></div>
+              <h4>Faux accent armchair</h4>
+              <p>Rich caramel faux leather armchair with minimalist black metal frame.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/17-stories-gerani-2975-w-armchair-w100072005.html?piid=1946015684" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/chair-retro-accent-wayfair.png" alt="Salma mid century modern accent chair" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$210 - $280</span></div>
+              <h4>Salma mid century modern accent chair</h4>
+              <p>Curved back mid-century chair with tapered legs and comfortable pitch.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/allmodern-salma-295-wide-solid-wood-frame-upholstered-mid-century-modern-retro-accent-chair-fdxy1243.html?piid=65772983" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/chair-accent-expensive-wayfair.png" alt="Accent chair expensive" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair Curated</span><span class="price-tag">~$350 - $480</span></div>
+              <h4>Accent chair expensive</h4>
+              <p>Sculptural premium statement chair with wrap-around back support.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/everly-quinn-avelina-w112768870.html?piid=1389545438" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/lounge-set-wayfair.png" alt="Mid-centuray louch chair set" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$320 - $440</span></div>
+              <h4>Mid-centuray louch chair set</h4>
+              <p>Full lounge pairing with matching footrest for reading nooks.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/ebern-designs-mid-century-modern-leather-bauhaus-inspired-lounge-chairset-of-2-gfbn1165.html?piid=119772943" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=80" alt="Article Otio" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge article">Article Comp</span><span class="price-tag">$699</span></div>
+              <h4>Article Otio Walnut Chair</h4>
+              <p>Solid American walnut structure with deep angled cushions.</p>
+              <a href="https://www.article.com/browse/5/chairs" target="_blank" class="card-btn">View on Article ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. RUGS & FLOOR PILLOWS -->
+    <section id="living-rugs-pillows" class="room-section">
+      <div class="section-header">
+        <h2>Area Rugs & Floor Seating</h2>
+        <p>Grounding textiles and flexible cushions for casual gatherings around the coffee table.</p>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Rugs & Floor Cushions</div>
+        <div class="vs-grid three-col">
+          <div class="side-card">
+            <img src="images/rug-jason-wu-wayfair.png" alt="Jasun wu rug" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$140 - $220</span></div>
+              <h4>Jasun wu rug</h4>
+              <p>Modern abstract patterning that anchors the living room seating arrangement.</p>
+              <a href="https://www.wayfair.com/rugs/pdp/allmodern-jason-wu-meander-black-rug-ya78706.html?piid=70587733" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/rug-hennings-wayfair.png" alt="Hennings rug" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$120 - $190</span></div>
+              <h4>Hennings rug</h4>
+              <p>Neutral textured high-traffic rug providing warmth underfoot.</p>
+              <a href="https://www.wayfair.com/rugs/pdp/wrought-studio-hennings-abstract-maze-black-ivory-area-rug-w114901434.html?piid=1901089367" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/pillow-bohemian-amazon.png" alt="Bohemian floor pillow" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$30 - $45</span></div>
+              <h4>Bohemian floor pillow</h4>
+              <p>Tufted meditation & guest floor pillow for low seating setups.</p>
+              <a href="https://www.amazon.com/dp/B0CRT5RQTQ/?coliid=I2T3947AFASVW4&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/pillow-square-amazon.png" alt="Square floor pillow" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$25 - $40</span></div>
+              <h4>Square floor pillow</h4>
+              <p>Durable structured Japanese-style floor seating disc.</p>
+              <a href="https://www.amazon.com/dp/B0GHLTH9FX/?coliid=I1T6SO2GCQ7C4L&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/pillow-codi-amazon.png" alt="Codi floor pillow" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$35 - $50</span></div>
+              <h4>Codi floor pillow</h4>
+              <p>Plush soft-touch accent pillow for casual lounging.</p>
+              <a href="https://www.amazon.com/dp/B0BMZGPWM5/?coliid=I10SM9AFKQB4M&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. TABLES -->
+    <section id="tables" class="room-section">
+      <div class="section-header">
+        <h2>Coffee & Side Tables</h2>
+        <p>Central coffee tables and matching side stands.</p>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Coffee & Accent Tables</div>
+        <div class="vs-grid">
+          <div class="side-card">
+            <img src="images/coffee-table-round-wayfair.png" alt="Round coffee table" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$110 - $160</span></div>
+              <h4>Round coffee table</h4>
+              <p>Warm wood round coffee table designed for easy flow in living rooms.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/ebern-designs-315-modern-round-coffee-table-with-360-curved-sliding-door-w112445086.html?piid=869235548" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/side-table-round-wayfair.png" alt="Round side table" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$55 - $80</span></div>
+              <h4>Round side table</h4>
+              <p>Compact tri-leg sofa companion table with raised lip edge.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/ebern-designs-round-3-tier-accent-side-table-with-storage-shelves-wooden-end-table-bedside-table-for-living-room-or-bedroom-w118101670.html?piid=959786763" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. STORAGE & TV -->
+    <section id="shelving-media" class="room-section">
+      <div class="section-header">
+        <h2>Media & Storage</h2>
+        <p>Credenzas, retro TV consoles, and display shelving units.</p>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">TV Consoles & Credenzas</div>
+        <div class="vs-grid three-col">
+          <div class="side-card">
+            <img src="images/tv-80-modern-wayfair.png" alt="Modern 80” tv stand" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$180 - $240</span></div>
+              <h4>Modern 80” tv stand</h4>
+              <p>Long credenza with slatted fluted doors and concealed storage.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/latitude-run-modern-solid-and-manufactured-wood-tv-stand-for-tvs-up-to-80-w112517414.html?piid=881541580%2C892549975" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/mid-century-tv-led-wayfair.png" alt="Mid-century tv stand LED" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair</span><span class="price-tag">~$190 - $260</span></div>
+              <h4>Mid-century tv stand LED</h4>
+              <p>Warm walnut grain console featuring ambient under-cabinet glow.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/povison-mid-century-modern-tv-stand-pre-assembled-w114498029.html?piid=1575895140%2C1575895147" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/tv-retro-expensive-wayfair.png" alt="Tv stand retro" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Wayfair Curated</span><span class="price-tag">~$380 - $520</span></div>
+              <h4>Tv stand retro</h4>
+              <p>Fluted tambour wood doors with brass accent hardware.</p>
+              <a href="https://www.wayfair.com/furniture/pdp/orxva-galaxy-tv-stand-modern-retro-style-with-storage-bxva2400.html?piid=108291563" target="_blank" class="card-btn">View on Wayfair ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Bookcases & Open Shelving</div>
+        <div class="vs-grid">
+          <div class="side-card">
+            <img src="images/shelf-stepped-amazon.png" alt="4-tier stepped bookshelf" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$75 - $110</span></div>
+              <h4>4-tier stepped bookshelf</h4>
+              <p>Geometric staggered shelf for display plants, ceramics, and books.</p>
+              <a href="https://www.amazon.com/dp/B0FGJB27BL/?coliid=I29ASMN3EHUENA&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/shelf-ladder-amazon.png" alt="Ladder bookshelf" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$60 - $85</span></div>
+              <h4>Ladder bookshelf</h4>
+              <p>Minimalist leaning wall storage shelf with protective raised edges.</p>
+              <a href="https://www.amazon.com/dp/B0GVM4PRW6/?coliid=I1HNUQGCEZ6XE&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WALL ART & PANELS -->
+    <section id="decor" class="room-section">
+      <div class="section-header">
+        <h2>Wall Panels & Dimensional Art</h2>
+        <p>Acoustic treatments, textured relief panels, and large canvas art.</p>
+      </div>
+
+      <div class="comparison-row">
+        <div class="row-title">Dimensional Wall Accents & Art</div>
+        <div class="vs-grid three-col">
+          <div class="side-card">
+            <img src="images/wall-slat-amazon.png" alt="Wood slat wall art" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$65 - $90 (Pack)</span></div>
+              <h4>Wood slat wall art</h4>
+              <p>Vertical wood veneer slats over sound-absorbing acoustic felt.</p>
+              <a href="https://www.amazon.com/dp/B0GVJCH3PF/?coliid=ICLG7GJG97I1G&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/wall-diamond-amazon.png" alt="Art wall 3d panel" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$55 - $75 (Box)</span></div>
+              <h4>Art wall 3d panel</h4>
+              <p>Geometric tiles providing dramatic shadow lines under ambient light.</p>
+              <a href="https://www.amazon.com/dp/B09T9DS6DH/?coliid=I9XJ3QSCZWHE&colid=2DNHYYG75EGDV&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/wall-acoustic-panel-amazon.png" alt="Art acoustic panels" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$60 - $85</span></div>
+              <h4>Art acoustic panels</h4>
+              <p>Textured acoustic wall dampening panels for clean aesthetic and sound balance.</p>
+              <a href="https://www.amazon.com/dp/B097ZX2GY6/?coliid=IJ6HQT51QZ2ZP&colid=2DNHYYG75EGDV&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <img src="images/walll-map-art-large-amazon.png" alt="Photo wallpaper map" class="side-thumb" />
+            <div class="card-body">
+              <div class="card-meta"><span class="badge budget">Amazon Pick</span><span class="price-tag">~$50 - $80</span></div>
+              <h4>Photo wallpaper map</h4>
+              <p>Wide-format vintage world map mural for the central living room or desk area.</p>
+              <a href="https://www.amazon.com/dp/B00SVE5OGW/?coliid=I2PKZLUFRN9409&colid=2DNHYYG75EGDV&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank" class="card-btn">View on Amazon ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const currentTheme = root.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', newTheme);
+    }
+  </script>
+</body>
+</html>
